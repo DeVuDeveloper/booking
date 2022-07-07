@@ -68,6 +68,8 @@ GEM
     awesome_print (1.9.2)
     bcrypt (3.1.18)
     bindex (0.8.1)
+    bootsnap (1.12.0)
+      msgpack (~> 1.2)
     builder (3.2.4)
     bullet (5.9.0)
       activesupport (>= 3.0.0)
@@ -245,6 +247,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_mime (1.1.2)
     minitest (5.16.2)
+    msgpack (1.5.3)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mustermann (1.1.1)
@@ -524,6 +527,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  bootsnap (>= 1.1.0)
   bullet (~> 5.7)
   byebug
   capybara (~> 3.29)
