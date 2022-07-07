@@ -11,7 +11,7 @@ RSpec.describe Reservation, type: :model do
   end
 
   context 'associations' do
-    it { is_expected.to belong_to(:bike) }
+    it { is_expected.to belong_to(:vespa) }
     it { is_expected.to belong_to(:user) }
   end
 end
