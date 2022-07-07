@@ -4,8 +4,9 @@ module Pagination
   module ActiveRecordRelationConnection
     def set_after_offset(relation, offset_value)
       if offset_value
-        
-        relation.where('created_at > ?', offset_value)
+        # TODO make these fields injectable from the outside customizable
+        # relation.where('id > ?', offset_value)
+        relation.where("created_at > ?", offset_value)
       else
         # relation.unscope(where: :id)
         relation.unscope(where: :created_at)
@@ -15,7 +16,7 @@ module Pagination
     def set_before_offset(relation, offset_value)
       if offset_value
         # relation.where('id > ?', offset_value)
-        relation.where('created_at < ?', offset_value)
+        relation.where("created_at < ?", offset_value)
       else
         # relation.unscope(where: :id)
         relation.unscope(where: :created_at)
@@ -28,8 +29,12 @@ module Pagination
       @limited_nodes ||= begin
         paginated_nodes = sliced_nodes
 
-        paginated_nodes = paginated_nodes.first(first) if first
-        paginated_nodes = paginated_nodes.last(last) if last
+        if first
+          paginated_nodes = paginated_nodes.first(first)
+        end
+        if last
+          paginated_nodes = paginated_nodes.last(last)
+        end
         paginated_nodes
       end
     end
@@ -39,8 +44,12 @@ module Pagination
     def sliced_nodes
       @sliced_nodes ||= begin
         paginated_nodes = items
-        paginated_nodes = set_after_offset(paginated_nodes, after_offset) if after_offset
-        paginated_nodes = set_before_offset(paginated_nodes, before_offset) if before_offset
+        if after_offset
+          paginated_nodes = set_after_offset(paginated_nodes, after_offset)
+        end
+        if before_offset
+          paginated_nodes = set_before_offset(paginated_nodes, before_offset)
+        end
 
         paginated_nodes
       end
@@ -75,4 +84,4 @@ module Pagination
   end
 end
 
-GraphQL::Pagination::ActiveRecordRelationConnection.include Pagination::ActiveRecordRelationConnection
+GraphQL::Pagination::ActiveRecordRelationConnection.send(:include, Pagination::ActiveRecordRelationConnection)
