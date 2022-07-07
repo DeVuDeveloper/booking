@@ -15,5 +15,5 @@ module ErrorCodes
   ACCESS_DENIED = 2000
 
   # -- Other -------------------------------
-  UNFORESEEN_SERVER_SIDE_ERROR = 100_000
+  UNFORESEEN_SERVER_SIDE_ERROR = 100000
 end

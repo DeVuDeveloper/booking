@@ -1,24 +1,49 @@
-# README
+ README
+--------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Coverage Status](https://coveralls.io/repos/github/orbanbotond/ReactBikes/badge.svg?branch=master)](https://coveralls.io/github/orbanbotond/ReactBikes?branch=master)
 
-Things you may want to cover:
+![Github Build](https://github.com/orbanbotond/ReactBikes/actions/workflows/main.yml/badge.svg)
 
-* Ruby version
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7ca05ca537e84d9f8273eeb15ab245c8)](https://www.codacy.com/manual/orbanbotond/ReactBikes?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=orbanbotond/ReactBikes&amp;utm_campaign=Badge_Grade)
 
-* System dependencies
+This project is a study project for a Hypotheticall Bike Rental Scenario. 
 
-* Configuration
+---
+ Use Cases
+==========
 
-* Database creation
+![alt text](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/orbanbotond/ReactBikes/master/diagrams/use_cases.puml)
 
-* Database initialization
+User Activity
+=============
+![alt text](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/orbanbotond/ReactBikes/master/diagrams/user_activity.puml)
 
-* How to run the test suite
+Entity Relationship
+=============
+![alt text](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/orbanbotond/ReactBikes/master/diagrams/entity_relationship.puml)
 
-* Services (job queues, cache servers, search engines, etc.)
+Backend Architecture
+=============
+![alt text](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/orbanbotond/ReactBikes/master/diagrams/back_end_architecture.puml)
 
-* Deployment instructions
+Frontend Architecture
+=============
+![alt text](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/orbanbotond/ReactBikes/master/diagrams/front_end_architecture.puml)
 
-* ...
+There are 2 API's for serving the frontend:
+- [Legacy Grape](https://github.com/ruby-grape/grape) with [Swagger](https://github.com/ruby-grape/grape-swagger)
+- [GraphQL](https://graphql-ruby.org)
+
+There are 2 backend implementations:
+- [Railsway Oriented using Trailbazer](https://github.com/orbanbotond/ReactBikes/tree/V1.15-trailblazer). [See Tag](https://github.com/orbanbotond/ReactBikes/tree/V1.15-trailblazer)
+- [More Railish One using Granite](https://github.com/toptal/granite)
+
+The project uses [github actions](https://github.com/features/actions) as CI:
+- Unit tests
+- API tests
+- [Pact tests for testing the graphql Endpoints](https://docs.pact.io)
+- rubocop
+- eslint
+
+The development was done in [TDD](https://en.wikipedia.org/wiki/Test-driven_development), except the UI, which was manually tested.

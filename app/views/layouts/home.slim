@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title ToptalReactBikes
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    div id='content'
+      = yield
+    = javascript_pack_tag 'application'
+    = Gon::Base.render_data

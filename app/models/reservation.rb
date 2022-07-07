@@ -2,7 +2,7 @@
 
 class Reservation < ApplicationRecord
   belongs_to :user
-  belongs_to :vespa
+  belongs_to :bike
 
   def live?
     !cancelled?

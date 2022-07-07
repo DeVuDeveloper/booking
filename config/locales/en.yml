@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+  errors:
+    start_before_end?: "Start should be before the end"
+    only_one?: "Only one should be specified"
+    email?: "It should be an email format"
+    unique?: "It should be unique"
+    matches_pwd?: "No email/pwd. Sorry"
+    foreign_key_exists?: "No entity with the foreign key exists"
+  granite_action:
+    errors:
+      messages:
+        action_invalid: "action invalid"
