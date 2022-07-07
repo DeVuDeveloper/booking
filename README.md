@@ -154,7 +154,7 @@ rails server -p 3001
 ```
 This will start a server at:
 ```bash
-localhost:3001
+localhost:3000
 ```
 You can paste or type it on url bar
 
