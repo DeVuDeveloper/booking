@@ -150,7 +150,7 @@ rails s
 <div align="center">OR</div>
 
 ```bash
-rails server -p 3001 
+rails server -p 3000
 ```
 This will start a server at:
 ```bash
