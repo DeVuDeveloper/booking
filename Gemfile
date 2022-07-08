@@ -37,7 +37,7 @@ gem "grape-entity", "~> 0.7.0"
 gem "grape-swagger", "~> 0.27.3"
 gem "grape-swagger-entity", "~> 0.2.5"
 gem "grape-swagger-ui", "~> 2.2"
-gem "grape_on_rails_routes", git: "https://github.com/orbanbotond/grape_on_rails_routes", branch: "fix_latest_grape_1_0_2"
+
 gem "jbuilder", "~> 2.5"
 # gem "paperclip", "~> 6.0"
 gem "pundit", "~> 1.1"
